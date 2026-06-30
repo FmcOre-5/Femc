@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemiCore - Women's Bladder & Sleep Health Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
+            background: #fff;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #6B7280;
+            margin-bottom: 16px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+            color: #fff;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 16px;
+        }
+        
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #7C3AED;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background: #7C3AED;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: #6D28D9;
+            transform: translateY(-2px);
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .grid-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .card {
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .card-header {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 1.6;
+        }
+        
+        .section-light {
+            background: #F8FAFC;
+        }
+        
+        .testimonial-source {
+            font-size: 10px;
+            color: #9CA3AF;
+            background: #E5E7EB;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        
+        .guarantee {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 20px;
+        }
+        
+        .guarantee h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        
+        .faq-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 16px;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: #F9FAFB;
+        }
+        
+        .faq-answer {
+            padding: 16px;
+            background: #fff;
+            border-top: 1px solid #E5E7EB;
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .compliance-box {
+            background: #FEF3C7;
+            border: 2px solid #F59E0B;
+            border-radius: 12px;
+            padding: 24px;
+            font-size: 12px;
+            color: #78350F;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .compliance-box strong {
+            color: #D97706;
+        }
+        
+        .compliance-box p {
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: #78350F;
+        }
+        
+        .footer {
+            background: #1F2937;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .footer-muted {
+            opacity: 0.6;
+            font-size: 11px;
+        }
+        
+        .ingredient-list {
+            list-style: none;
+        }
+        
+        .ingredient-list li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .margin-top-30 {
+            margin-top: 30px;
+        }
+        
+        .disclaimer-small {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 16px;
+            padding: 16px;
+            background: #E5E7EB;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            section {
+                padding: 40px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle">WOMEN'S WELLNESS SUPPORT</div>
+            <h1>Support for Bladder & Sleep Health</h1>
+            <p>FemiCore is formulated with natural ingredients to support urinary microbiome health. Individual results vary.</p>
+            <button class="btn btn-primary" onclick="document.querySelector('.cta-section').scrollIntoView({behavior: 'smooth'})">
+                Learn More About FemiCore →
+            </button>
+            <p style="font-size: 12px; margin-top: 16px; color: rgba(255,255,255,0.6);">
+                ✅ Natural Ingredients • 💜 30-Day Guarantee • 🛡️ See Terms Below
+            </p>
+        </div>
+    </section>
+
+    <!-- WHAT IS FEMICORE -->
+    <section>
+        <div class="container">
+            <h2>What is FemiCore?</h2>
+            <p class="text-center">
+                FemiCore is a dietary supplement formulated with natural ingredients designed to support urinary microbiome health and promote overall wellness in women. Results and timeline vary by individual.
+            </p>
+            
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: #7C3AED;">Key Ingredients</h3>
+                    <ul class="ingredient-list">
+                        <li>✓ Lactobacillus Crispatus</li>
+                        <li>✓ D-Mannose</li>
+                        <li>✓ Hibiscus Extract</li>
+                        <li>✓ Cranberry Extract (PAC-standardized)</li>
+                    </ul>
+                    <p style="font-size: 12px; color: #9CA3AF; margin-top: 16px;">
+                        These ingredients are selected to support urinary microbiome health naturally.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 style="color: #059669;">How It Works</h3>
+                    <p>
+                        FemiCore is designed to support the urinary microbiome with probiotics and botanical extracts. The formula is intended for women seeking natural support for bladder health and overall wellness.
+                    </p>
+                    <p style="font-size: 12px; color: #9CA3AF; margin-top: 16px;">
+                        Individual results may vary. Not intended to diagnose, treat, cure, or prevent any disease.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-light">
+        <div class="container">
+            <h2>User Testimonials</h2>
+            <p class="text-center">Verified customer feedback. Individual experiences vary.</p>
+            
+            <div class="grid-1">
+                <div class="card">
+                    <div class="card-header">Sarah, 52 • Florida</div>
+                    <div class="card-text">"I've been taking FemiCore for 6 weeks. I've noticed improvements in my sleep quality."</div>
+                    <div class="testimonial-source">Verified ClickBank Buyer</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Jessica, 47 • Texas</div>
+                    <div class="card-text">"After consistent use for 2 months, I feel more energetic throughout the day."</div>
+                    <div class="testimonial-source">Verified ClickBank Buyer</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Michelle, 49 • California</div>
+                    <div class="card-text">"I appreciate that FemiCore has natural ingredients. It's been part of my wellness routine."</div>
+                    <div class="testimonial-source">Verified ClickBank Buyer</div>
+                </div>
+            </div>
+            
+            <div class="disclaimer-small" style="text-align: center; margin-top: 30px;">
+                <strong>Disclaimer:</strong> These testimonials are from verified ClickBank purchasers. Results vary by individual. These statements have not been evaluated by the FDA.
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section>
+        <div class="container">
+            <h2>Ingredient Details</h2>
+            
+            <div class="grid-1">
+                <div class="card">
+                    <div class="card-header">Lactobacillus Crispatus</div>
+                    <div class="card-text">A naturally-occurring bacterium studied for its role in urinary health support.</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">D-Mannose</div>
+                    <div class="card-text">A naturally occurring sugar that may support bladder comfort.</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Hibiscus Extract</div>
+                    <div class="card-text">Contains polyphenols studied for antioxidant and anti-inflammatory properties.</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">Cranberry Extract</div>
+                    <div class="card-text">Standardized to contain proanthocyanidins (PACs), traditionally used for urinary health.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-light">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="grid-1">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long until I see results?
+                        <span>▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Individual results vary. Most users report initial improvements in 2-4 weeks. We recommend giving it 8 weeks for full evaluation. Results are not guaranteed and vary by individual.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What if it doesn't work for me?
+                        <span>▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        FemiCore offers a 30-day money-back guarantee. If you're not satisfied for any reason, you can request a full refund within 30 days of purchase.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is it safe? Any side effects?
+                        <span>▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        FemiCore uses natural ingredients. Some users report mild digestive adjustment in week 1. These statements have not been evaluated by the FDA. Always consult your doctor before use, especially if on medication or pregnant.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I take it with other supplements?
+                        <span>▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Consult your healthcare provider before taking FemiCore with other supplements or medications to ensure compatibility with your individual health situation.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee">
+        <h3>30-Day Money-Back Guarantee</h3>
+        <p style="color: rgba(255,255,255,0.9); margin-bottom: 20px;">
+            Try FemiCore risk-free for 30 days. If you're not satisfied for any reason, request a full refund.
+        </p>
+        <p style="font-size: 13px; opacity: 0.7;">
+            This guarantee allows you to evaluate the product with confidence.
+        </p>
+    </div>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2>Ready to Learn More?</h2>
+            <p>Visit the official FemiCore store to learn more and make your purchase.</p>
+            
+            <button class="btn btn-secondary margin-top-30" onclick="window.location.href='https://1ab185cbmyqiw1l2p7l6qikq8f.hop.clickbank.net/?&traffic_source=threads&traffic_type=threads'">
+                Visit FemiCore Official Store →
+            </button>
+            
+            <p style="font-size: 12px; color: #9CA3AF; margin-top: 30px;">
+                You will be redirected to the official FemiCore purchase page.
+            </p>
+
+            <!-- COMPLIANCE DISCLAIMER -->
+            <div class="compliance-box">
+                <div style="font-size: 13px; font-weight: 800; margin-bottom: 12px; color: #D97706;">
+                    📌 IMPORTANT DISCLOSURES & COMPLIANCE
+                </div>
+                
+                <p>
+                    <strong>Affiliate Relationship:</strong> This is an affiliate promotion. I earn a commission from purchases made through my affiliate link at no extra cost to you.
+                </p>
+                
+                <p>
+                    <strong>FDA Disclaimer:</strong> These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. FemiCore is a dietary supplement, not a medication.
+                </p>
+                
+                <p>
+                    <strong>Individual Results Vary:</strong> Results depend on individual factors including health status, consistency of use, diet, exercise, and other lifestyle factors.
+                </p>
+                
+                <p>
+                    <strong>Medical Advice:</strong> Consult your healthcare provider before using FemiCore if you are pregnant, nursing, taking medications, or have a medical condition.
+                </p>
+                
+                <p>
+                    <strong>Money-Back Guarantee:</strong> FemiCore offers a 30-day money-back guarantee according to their refund policy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>This is an affiliate promotion of FemiCore.</p>
+        <p>For official product information, visit the FemiCore official website.</p>
+        <p style="margin-top: 10px;">
+            30-day money-back guarantee • Natural ingredients • Individual results vary
+        </p>
+        <p class="footer-muted" style="margin-top: 20px;">
+            © 2026. Affiliate disclaimer: I earn commission from FemiCore purchases. This complies with FTC guidelines and FemiCore affiliate program requirements.
+        </p>
+    </footer>
+
+    <script>
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const arrow = button.querySelector('span');
+            
+            // Close all others
+            document.querySelectorAll('.faq-answer.active').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('span').textContent = '▼';
+                }
+            });
+            
+            // Toggle current
+            answer.classList.toggle('active');
+            arrow.textContent = answer.classList.contains('active') ? '▲' : '▼';
+        }
+    </script>
+
+</body>
+</html>
